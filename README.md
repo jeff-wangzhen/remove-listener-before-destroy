@@ -78,7 +78,7 @@ export default {
     console.log("count component beforeDestroy");
     // 移除所有监听事件，当本组件被引用多次时，所有引用的监听全部移除
     // this.notify.$off("notify");
-    // 移除所有监听事件，当本组件被引用多次时，所有引用的监听全部移除
+    // 移除指定监听事件
     // this.notify.$off("notify", this.listen);
   },
   methods: {
@@ -113,8 +113,8 @@ CountComponent2.vue 复制一份，换一下打印字符串就是。
 3. 如果在第一个组件中解开下列代码：
 
 ```javascript
-    // 移除所有监听事件，当本组件被引用多次时，所有引用的监听全部移除
-    // this.notify.$off("notify", this.listen);
+    // 移除指定监听事件
+    this.notify.$off("notify", this.listen);
 ```
 就是理想情况：打印语句只有一条，页面上的计数器还是会改变。重新渲染时就会出现两条打印日志。
 
