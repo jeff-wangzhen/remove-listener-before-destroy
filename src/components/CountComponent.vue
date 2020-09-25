@@ -15,7 +15,7 @@ export default {
     console.log("count component beforeDestroy");
     // 移除所有监听事件，当本组件被引用多次时，所有引用的监听全部移除
     // this.notify.$off("notify");
-    // 移除所有监听事件，当本组件被引用多次时，所有引用的监听全部移除
+    // 移除指定监听事件
     // this.notify.$off("notify", this.listen);
   },
   methods: {
