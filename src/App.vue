@@ -1,19 +1,31 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <CountComponent v-if="show" />
+    <CountComponent2 />
+    <button @click="click">触发计数</button>
+    <button @click="render">注销/重新渲染第一个组件</button>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import CountComponent from "./components/CountComponent.vue";
+import CountComponent2 from "./components/CountComponent2.vue";
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  components: { CountComponent, CountComponent2 },
+  data() {
+    return { show: true };
+  },
+  methods: {
+    click() {
+      this.notify.$emit("notify");
+    },
+    render() {
+      this.show = !this.show;
+    },
+  },
+};
 </script>
 
 <style>
@@ -24,5 +36,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+button {
+  margin: 10px;
 }
 </style>
