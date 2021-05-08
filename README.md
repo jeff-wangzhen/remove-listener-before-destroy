@@ -123,9 +123,3 @@ CountComponent2.vue 复制一份，换一下打印字符串就是。
 
 [点击这里查看示例代码](https://github.com/kill370354/remove-listener-before-destroy)
 
-# 后记
-看了一下 3.0 的[文档](https://vue3js.cn/docs/zh/guide/migration/events-api.html)，
-
-> $on，$off 和 $once 实例方法已被移除，应用实例不再实现事件触发接口。
-
-以后不会有这个问题了。
