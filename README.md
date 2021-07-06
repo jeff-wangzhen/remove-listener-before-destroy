@@ -123,3 +123,6 @@ CountComponent2.vue 复制一份，换一下打印字符串就是。
 
 [点击这里查看示例代码](https://github.com/kill370354/remove-listener-before-destroy)
 
+---
+### 后记
+本质上应该是 this.notify 这个对象一直存在，调用的是它的`$on`和`$off`方法, 跟页面组件并没有关系。
